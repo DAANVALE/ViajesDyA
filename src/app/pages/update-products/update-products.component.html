@@ -1,0 +1,58 @@
+<div class="container">
+  <div>
+      <form #myForm="ngForm">
+        <div class="form-row">
+            <div class="d-flex">
+              <div class="col-md-2">
+                <label for="type">Opción:</label>
+                <input type="text" id="type" name="type" class="form-control" required>
+              </div>
+              <div class="col-md-4">
+                <label for="place">Lugar:</label>
+                <input type="text" id="place" name="place" class="form-control" required>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="col-md-2">
+                  <label for="startDate">Fecha de inicio:</label>
+                  <input type="date" id="startDate" name="startDate" class="form-control" required>
+              </div>
+              <div class="col-md-2">
+                  <label for="endDate">Fecha de finalización:</label>
+                  <input type="date" id="endDate" name="endDate" class="form-control" required>
+              </div>
+              <div class="col-md-2">
+                <label for="price">Precio:</label>
+                <input type="text" id="price" name="price" class="form-control" required>
+            </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Agregar Registro</button>
+      </form>
+  </div>
+
+  <div class="mt-5">
+      <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+              <tr>
+                  <th>Opción</th>
+                  <th>Lugar</th>
+                  <th>Fecha de Inicio</th>
+                  <th>Fecha de Finalización</th>
+                  <th>Precio</th>
+              </tr>
+          </thead>
+          <tbody *ngFor="let item of cardsList; 
+                  let i = index;
+                  let isOdd = odd;">
+              <tr>
+                  <td>{{ item.type }}</td>
+                  <td>{{ item.place }}</td>
+                  <td>{{ item.startTime }}</td>
+                  <td>{{ item.finishTime }}</td>
+                  <td>$ {{ 400 }}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

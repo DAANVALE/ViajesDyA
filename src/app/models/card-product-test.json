@@ -1,0 +1,64 @@
+{
+  "registros": [
+    {
+      "type": "Vuelo",
+      "place": "Buenos Aires",
+      "startTime": "10Jan",
+      "finishTime": "21Dec"
+    },
+    {
+      "type": "Hospedaje",
+      "place": "Nueva York",
+      "startTime": "15Feb",
+      "finishTime": "30Nov"
+    },
+    {
+      "type": "Paquetes", 
+      "place": "París",
+      "startTime": "5Mar",
+      "finishTime": "10Oct"
+    },
+    {
+      "type": "Vuelo",
+      "place": "Tokio",
+      "startTime": "20Apr",
+      "finishTime": "15Sep"
+    },
+    {
+      "type": "Hospedaje",
+      "place": "Londres",
+      "startTime": "1Jun",
+      "finishTime": "25Aug"
+    },
+    {
+      "type": "Paquetes",
+      "place": "Roma",
+      "startTime": "10Jul",
+      "finishTime": "20Jul"
+    },
+    {
+      "type": "Vuelo",
+      "place": "Madrid",
+      "startTime": "15Aug",
+      "finishTime": "30Jun"
+    },
+    {
+      "type": "Hospedaje",
+      "place": "Barcelona",
+      "startTime": "20Sep",
+      "finishTime": "15May"
+    },
+    {
+      "type": "Paquetes",
+      "place": "Sevilla",
+      "startTime": "5Oct",
+      "finishTime": "10Apr"
+    },
+    {
+      "type": "Vuelo",
+      "place": "Granada",
+      "startTime": "1Nov",
+      "finishTime": "25Mar"
+    }
+  ]
+}

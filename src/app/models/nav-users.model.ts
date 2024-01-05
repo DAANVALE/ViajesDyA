@@ -1,0 +1,1 @@
+export type navModelType = 'Admin' | 'Client' | 'Non' ;

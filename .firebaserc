@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "viajesdya-a3c84": {
+      "hosting": {
+        "bases": [
+          "viajesdya-a3c84"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "viajesdya-a3c84"
+  }
+}

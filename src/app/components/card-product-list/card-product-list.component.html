@@ -1,0 +1,6 @@
+<div class="container">
+    <button class="btn btn-info mt-2" (click)="getStarted()"> Actualizar datos </button>
+    <div *ngFor="let item of cardsList">
+        <app-card-product [myCard]="item"></app-card-product>
+    </div>
+</div>

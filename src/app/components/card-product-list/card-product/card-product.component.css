@@ -1,0 +1,46 @@
+/* app/tu-componente/tu-componente.component.css */
+
+#card {
+  width: fit-content;
+  }
+
+#card:hover {
+  scale: 1.1;
+  #card-body {
+    background-color: #FFFFFFAA;
+    transition: background-color 0.5s ease;
+  }
+}
+  
+  .card-icon {
+    width: fit-content; /* Ajusta el tamaño del icono según sea necesario */
+    height: fit-content;
+  }
+  
+  #card-header {
+    background-color: #007bff;
+    color: #fff;
+    border-bottom-left-radius: 15%;
+    border-bottom-right-radius: 15%;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  #card-body {
+    background-color: var(--myCardBody,whitesmoke);
+    padding: 20px;
+    border-top: 5%;
+  }
+  
+  .card-title {
+    font-size: 1.25rem; /* Tamaño del título */
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    margin-bottom: 5px;
+  }
+  

@@ -1,0 +1,19 @@
+<div class="mt-3">
+  <div class="row">
+    <div class="col">
+      <div id="card" 
+      [style.backgroundImage]="'url('+ imgUrl +')'"
+      [style.backgroundSize]="'cover'"
+      >
+        <div id="card-header">
+            <p> Opcion: <strong>{{ type }}</strong></p>
+        </div>
+        <div id="card-body">
+          <h5 class="card-title">{{ place }}</h5>
+          <p class="card-text">{{ startTime + " to " + finishTime }}</p>
+          <p class="card-text">$ 400</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

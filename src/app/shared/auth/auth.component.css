@@ -1,0 +1,45 @@
+/* app/tu-componente/tu-componente.component.css */
+#page{
+    background-image: url("../../../assets/images/background.jpg");
+    background-repeat: multiply;
+    padding-top: 60px;
+    height: 100vh;
+    /* 100% del alto de la ventana menos el alto de la barra de navegación */
+}
+
+#min-form{
+    max-width: 60vh;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #003d7e;
+    color: #fff;
+    border-bottom: none; /* Remove border at the bottom of card header */
+  }
+  
+  .btn-primary {
+    background-color: #003d7e;
+    border-color: #003d7e;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Additional styles for form validation messages */
+  .text-danger {
+    font-size: 0.875rem; /* Adjust font size */
+    margin-top: 4px; /* Add a little space above the error message */
+  }
+  
+  /* Optional: Style the form input fields for PrimeNG */
+  .p-inputtext {
+    width: 100%;
+    padding: 0.5rem;
+  }
+  

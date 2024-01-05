@@ -1,0 +1,20 @@
+#body {
+    background-blend-mode: multiply;
+    background-position: center;
+}
+
+/* Estilos generales para el menú */
+app-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+/* Estilos para el router-outlet */
+router-outlet {
+    overflow-y: auto;
+    position: relative;
+    /* No es necesario añadir padding-top o ajustar la altura aquí */
+}
+  

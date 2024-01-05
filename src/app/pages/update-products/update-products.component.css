@@ -1,0 +1,9 @@
+.is-odd{
+    background-color: #a2ddff !important;
+    color: red;
+}
+
+.not-odd{
+background-color: red !important;
+    color: #a2ddff;
+}
