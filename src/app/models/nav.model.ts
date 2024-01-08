@@ -12,8 +12,8 @@ export const initialState: MenuItem = {
    },
   items: 
     [
-      {label: 'Vuelos', icon: PrimeIcons.SEND, routerLink: 'CardProducts/Viaje', command: () => {
-        localStorage.setItem('CardFilter', 'Viaje');
+      {label: 'Vuelos', icon: PrimeIcons.SEND, routerLink: 'CardProducts/Vuelo', command: () => {
+        localStorage.setItem('CardFilter', 'Vuelo');
         window.location.reload();
        }
       },

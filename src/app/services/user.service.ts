@@ -12,4 +12,16 @@ export class UserService {
     return createUserWithEmailAndPassword(this.auth, email, password);
   }
 
+  get isLogged(): boolean{
+    return this.isLoggedClient || this.isLoggedAdmin;
+  }
+
+  get isLoggedClient(): boolean{
+    return localStorage.getItem('navbar') === 'Client';
+  }
+
+  get isLoggedAdmin(): boolean{
+    return localStorage.getItem('navbar') === 'Admin';
+  }
+
 }

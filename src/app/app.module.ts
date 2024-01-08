@@ -17,7 +17,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { getRemoteConfig, provideRemoteConfig } from '@angular/fire/remote-config';
-
+import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { MainpageComponent } from './pages/mainpage/mainpage.component';
@@ -60,6 +60,7 @@ import { UpdateProductsComponent } from './pages/update-products/update-products
     ReactiveFormsModule,
     MenubarModule,
     StyleClassModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent,]

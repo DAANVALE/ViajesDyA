@@ -1,27 +1,37 @@
 <div class="container">
   <div>
       <form #myForm="ngForm">
-        <div class="form-row">
+        <div class="form-row mt-3">
             <div class="d-flex">
-              <div class="col-md-2">
-                <label for="type">Opción:</label>
-                <input type="text" id="type" name="type" class="form-control" required>
-              </div>
               <div class="col-md-4">
                 <label for="place">Lugar:</label>
                 <input type="text" id="place" name="place" class="form-control" required>
               </div>
+              <div class="col-md-4">
+                <label for="type">Opción:</label>
+                <br>
+                <p-dropdown
+                  [options]="opciones"
+                  [(ngModel)]="opcionSeleccionada"
+                  (ngModelChange)="actualizarDatoSeleccionado()"
+                  optionLabel="label"
+                  placeholder="Selecciona una opción"
+                  name="type"
+                  id="type"
+                  [required]="true"
+                ></p-dropdown>
+              </div>
             </div>
             <div class="d-flex">
               <div class="col-md-2">
-                  <label for="startDate">Fecha de inicio:</label>
+                  <label for="startDate">De:</label>
                   <input type="date" id="startDate" name="startDate" class="form-control" required>
               </div>
               <div class="col-md-2">
-                  <label for="endDate">Fecha de finalización:</label>
+                  <label for="endDate">Hasta:</label>
                   <input type="date" id="endDate" name="endDate" class="form-control" required>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="price">Precio:</label>
                 <input type="text" id="price" name="price" class="form-control" required>
             </div>

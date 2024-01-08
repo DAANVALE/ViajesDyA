@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
@@ -18,7 +18,7 @@ export class AuthComponent implements OnInit{
 
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router,
   ) {
     this.formReg = new FormGroup({
       email: new FormControl(),
@@ -33,6 +33,7 @@ export class AuthComponent implements OnInit{
     localStorage.removeItem('navbar');
     localStorage.setItem('navbar', 'Client');
     window.location.reload();
+    this.router.navigate(['Edit']);
     /*
     this.userService.register(this.formReg.value)
       .then(response => {
@@ -47,6 +48,8 @@ export class AuthComponent implements OnInit{
     localStorage.removeItem('navbar');
     localStorage.setItem('navbar', 'Admin');
     window.location.reload();
+    this.router.navigate(['Edit']);
+    // this.menuItems.routerLink = '';
     /*
     this.userService.register(this.formReg.value)
       .then(response => {

@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { AngularFireDatabase } from '@angular/fire/compat/database';
-import { ActivatedRoute, Router } from '@angular/router';
-import { CardProduct } from 'src/app/Interfaces/card-product.interface';
+import { Route, Router } from '@angular/router';
+import { SelectItem } from 'primeng/api';
+import { CardProduct,  } from 'src/app/models/card-product.interface';
+import { ProductsFireService } from 'src/app/services/products.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-update-products',
@@ -11,10 +13,18 @@ import { CardProduct } from 'src/app/Interfaces/card-product.interface';
 export class UpdateProductsComponent {
   public cardsList: CardProduct[] = [];
 
+  opciones: SelectItem[] = [
+    { label: 'Vuelo', value: 'Vuelo'},
+    { label: 'Hospedaje', value: 'Hospedaje' },
+    { label: 'Paquetes', value: 'Paquetes' },
+  ];
+
+  opcionSeleccionada: SelectItem = { label: '', value: '' };
+
   constructor(
-    private db: AngularFireDatabase,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
+    private productService: ProductsFireService,
+    private authService: UserService,
+    private router: Router,
     ) {
     /**
      * Lo comentamos para hacerlo exclusivo y evitar que se cargue 
@@ -23,32 +33,35 @@ export class UpdateProductsComponent {
     // if (localStorage.getItem('cardsList') == null) {
     //   this.getStarted();
     // }
-
-    this.cardsList = JSON.parse(localStorage.getItem('cardsList') || '{}') as CardProduct[];
-    console.log(this.cardsList);
-    //this.getStarted();
   }
 
   ngOnInit(): void {
+
+    if(!this.authService.isLogged){
+      this.router.navigate(['Auth']);
+    }
+
+    this.getCardList();
   }
 
-  async getStarted(){
-    var card: CardProduct[] = [];
-    
-    await this.getCardsList().then((database) => {
-      card = database as CardProduct[];
-    });
-
-    this.cardsList = card;
-    localStorage.setItem('cardsList', JSON.stringify(this.cardsList));
-    console.log(this.cardsList);
+  public async getStarted(){
+    await this.productService.getStarted();
+    this.getCardList();
+    window.location.reload();
   }
 
-  getCardsList(){
-    return new Promise((resolve) => {
-      this.db.list('registros').valueChanges().subscribe((data) => {
-        resolve(data);
-      });
-    });
+  public getCardList(): void{
+
+    localStorage.setItem('CardFilter', this.opcionSeleccionada.value);
+
+    if(localStorage.getItem('cardsList')){
+      this.cardsList = this.productService.getLoad(
+      JSON.parse(localStorage.getItem('cardsList') || '{}') as CardProduct[]);
+    }
+  }
+
+  public actualizarDatoSeleccionado(){
+    localStorage.setItem('CardFilter', this.opcionSeleccionada.value);
+    this.getCardList();
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { update } from 'firebase/database';
 import { MenuItem, PrimeIcons } from 'primeng/api';
-import { CardProduct, CardProductType } from 'src/app/Interfaces/card-product.interface';
+import { CardProduct, CardProductType } from 'src/app/models/card-product.interface';
 import { navModelType } from 'src/app/models/nav-users.model';
 import { userStates, navModel, adminState, loginState } from 'src/app/models/nav.model';
 
@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit{
     this.updateNavbar(this.cardState);
   }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.items = navModel;
     this.cardState = localStorage.getItem('navbar') as navModelType;
     if (this.cardState === null){

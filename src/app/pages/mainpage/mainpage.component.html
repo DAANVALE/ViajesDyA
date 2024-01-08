@@ -10,7 +10,7 @@
     </div>
   
     <div class="row mt-4">
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4" (click)="onClick('Vuelo')">
         <div class="card">
           <img src="../../../assets/images/travel.jpg" class="card-img-top" alt="Travel Image">
           <div class="card-body">
@@ -20,7 +20,7 @@
         </div>
       </div>
   
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4" (click)="onClick('Hospedaje')">
         <div class="card">
           <img src="../../../assets/images/hospedaje.jpg" class="card-img-top" alt="Accommodation Image">
           <div class="card-body">
@@ -30,7 +30,7 @@
         </div>
       </div>
   
-      <div class="col-md-4 mb-4">
+      <div class="col-md-4 mb-4" [routerLink]="'CardProducts/Paquetes'" (click)="onClick('Paquetes')">
         <div class="card">
           <img src="../../../assets/images/promos.jpg" class="card-img-top" alt="Promotions Image">
           <div class="card-body">

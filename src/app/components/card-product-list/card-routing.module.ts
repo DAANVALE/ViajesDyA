@@ -3,7 +3,7 @@ import { CardProductListComponent } from './card-product-list.component';
 import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
-    { path: 'Viaje', component: CardProductListComponent },
+    { path: 'Vuelo', component: CardProductListComponent },
     { path: 'Hospedaje', component: CardProductListComponent },
     { path: 'Paquetes', component: CardProductListComponent },
     { path: '**', redirectTo: 'Paquetes'},
