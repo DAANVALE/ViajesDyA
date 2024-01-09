@@ -15,12 +15,14 @@ export class CardProductComponent implements OnInit{
   public place: string;
   public startTime: string;
   public finishTime: string;
+  public precio: number;
 
   constructor(){
     this.type = '';
     this.place = '';
     this.startTime = '';
     this.finishTime = '';
+    this.precio = 0;
   }
 
   ngOnInit(): void {
@@ -28,6 +30,7 @@ export class CardProductComponent implements OnInit{
     this.place = this.myCard.place;
     this.startTime = this.myCard.startTime;
     this.finishTime = this.myCard.finishTime;
+    this.precio = this.myCard.precio
     this.dynamicImage();
   }
 

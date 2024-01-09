@@ -1,11 +1,11 @@
 <div class="container">
   <div>
-      <form #myForm="ngForm">
+      <form #myForm="ngForm" [formGroup]="formReg" (ngSubmit)="setCardList()">
         <div class="form-row mt-3">
             <div class="d-flex">
               <div class="col-md-4">
                 <label for="place">Lugar:</label>
-                <input type="text" id="place" name="place" class="form-control" required>
+                <input type="text" id="place" name="place" class="form-control" required formControlName="place">
               </div>
               <div class="col-md-4">
                 <label for="type">Opción:</label>
@@ -25,15 +25,15 @@
             <div class="d-flex">
               <div class="col-md-2">
                   <label for="startDate">De:</label>
-                  <input type="date" id="startDate" name="startDate" class="form-control" required>
+                  <input type="date" id="startDate" name="startDate" class="form-control" required formControlName="startTime">
               </div>
               <div class="col-md-2">
                   <label for="endDate">Hasta:</label>
-                  <input type="date" id="endDate" name="endDate" class="form-control" required>
+                  <input type="date" id="endDate" name="endDate" class="form-control" required formControlName="finishTime">
               </div>
               <div class="col-md-3">
                 <label for="price">Precio:</label>
-                <input type="text" id="price" name="price" class="form-control" required>
+                <input type="text" id="price" name="price" class="form-control" required formControlName="precio">
             </div>
             </div>
           </div>
@@ -60,7 +60,7 @@
                   <td>{{ item.place }}</td>
                   <td>{{ item.startTime }}</td>
                   <td>{{ item.finishTime }}</td>
-                  <td>$ {{ 400 }}</td>
+                  <td>$ {{ item.precio }}</td>
               </tr>
           </tbody>
       </table>

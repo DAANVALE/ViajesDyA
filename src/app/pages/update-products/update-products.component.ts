@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Route, Router } from '@angular/router';
 import { SelectItem } from 'primeng/api';
-import { CardProduct,  } from 'src/app/models/card-product.interface';
+import { CardProductComponent } from 'src/app/components/card-product-list/card-product/card-product.component';
+import { CardProduct, CardProductType,  } from 'src/app/models/card-product.interface';
 import { ProductsFireService } from 'src/app/services/products.service';
 import { UserService } from 'src/app/services/user.service';
 
@@ -12,6 +14,9 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UpdateProductsComponent {
   public cardsList: CardProduct[] = [];
+  public cards?: CardProduct;
+
+  public formReg!: FormGroup;
 
   opciones: SelectItem[] = [
     { label: 'Vuelo', value: 'Vuelo'},
@@ -33,6 +38,15 @@ export class UpdateProductsComponent {
     // if (localStorage.getItem('cardsList') == null) {
     //   this.getStarted();
     // }
+
+      this.formReg = new FormGroup ({
+        place: new FormControl(),
+        startTime: new FormControl(),
+        finishTime: new FormControl(),
+        precio: new FormControl(),
+        type: new FormControl()
+      })
+
   }
 
   ngOnInit(): void {
@@ -58,6 +72,16 @@ export class UpdateProductsComponent {
       this.cardsList = this.productService.getLoad(
       JSON.parse(localStorage.getItem('cardsList') || '{}') as CardProduct[]);
     }
+  }
+
+  public setCardList():void{
+
+    this.cards = this.formReg.value as CardProduct;
+    
+    this.cards.type = this.opcionSeleccionada.value;
+    // this.cards = { precio: 0, startTime: "", finishTime: "", place: "", type: this.opcionSeleccionada.value };
+
+    this.productService.setCard(this.cards);
   }
 
   public actualizarDatoSeleccionado(){

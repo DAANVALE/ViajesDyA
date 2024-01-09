@@ -32,32 +32,28 @@ export class AuthComponent implements OnInit{
   onSubmit() {
     localStorage.removeItem('navbar');
     localStorage.setItem('navbar', 'Client');
-    window.location.reload();
-    this.router.navigate(['Edit']);
-    /*
+    
     this.userService.register(this.formReg.value)
       .then(response => {
         console.log(response);
-        this.router.navigate(['/login']);
+        this.router.navigate(['Edit']);
       })
       .catch(error => console.log(error));
-    */
+    
     }
 
   onSubmitAdmin() {
     localStorage.removeItem('navbar');
     localStorage.setItem('navbar', 'Admin');
-    window.location.reload();
-    this.router.navigate(['Edit']);
     // this.menuItems.routerLink = '';
-    /*
+    
     this.userService.register(this.formReg.value)
       .then(response => {
         console.log(response);
-        this.router.navigate(['/login']);
+        this.router.navigate(['Edit']);
       })
       .catch(error => console.log(error));
-    */
+    
     }
 
   changeType() {
